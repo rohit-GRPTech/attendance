@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ─────────────────────────────────────────────────
+   Neutral system with one configurable primary. Dark mode via .dark. */
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 224 18% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 18% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 18% 12%;
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 224 14% 24%;
+    --muted: 220 14% 95%;
+    --muted-foreground: 222 10% 44%;
+    --accent: 226 100% 96%;
+    --accent-foreground: 243 60% 45%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 60% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 36 92% 44%;
+    --warning-foreground: 0 0% 100%;
+    --border: 220 13% 89%;
+    --input: 220 13% 85%;
+    --ring: 243 75% 59%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 20% 8%;
+    --foreground: 220 14% 92%;
+    --card: 224 18% 11%;
+    --card-foreground: 220 14% 92%;
+    --popover: 224 18% 11%;
+    --popover-foreground: 220 14% 92%;
+    --primary: 240 80% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 224 14% 18%;
+    --secondary-foreground: 220 12% 84%;
+    --muted: 224 14% 16%;
+    --muted-foreground: 222 10% 62%;
+    --accent: 240 30% 22%;
+    --accent-foreground: 236 90% 84%;
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 52% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 36 88% 52%;
+    --warning-foreground: 0 0% 0%;
+    --border: 224 12% 22%;
+    --input: 224 12% 26%;
+    --ring: 240 80% 68%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground font-sans text-[15px] leading-normal;
+  }
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Strong, consistent focus states */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "appforge",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AppForge - multi-tenant low-code SaaS platform",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @appforge/shared && npm run build -w @appforge/api && npm run build -w @appforge/web",
+    "dev:api": "npm run dev -w @appforge/api",
+    "dev:web": "npm run dev -w @appforge/web",
+    "typecheck": "npm run typecheck -w @appforge/shared && npm run typecheck -w @appforge/api && npm run typecheck -w @appforge/web",
+    "db:migrate": "npm run db:migrate -w @appforge/api",
+    "db:seed": "npm run db:seed -w @appforge/api"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
